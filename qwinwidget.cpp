@@ -126,6 +126,10 @@ LRESULT QWinWidgetPrivate::CustomCaptionProc(UINT message, WPARAM wParam, LPARAM
             q_ptr->setContentsMargins(2, 2, 2, 2);
         }
 
+        MINMAXINFO * psinf = (MINMAXINFO * )lParam;
+        psinf->ptMinTrackSize.x = q_ptr->minimumWidth();
+        psinf->ptMinTrackSize.y = q_ptr->minimumHeight();
+
         lRet = ::DefWindowProc(hWnd, message, wParam, lParam);
         *procOk = true;
     }
