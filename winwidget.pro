@@ -5,7 +5,8 @@ CONFIG(debug, debug|release) {
 }
 
 
-QT       += core gui widgets
+#QT       += core gui widgets 
+QT       += quick-private quickcontrols2-private quicktemplates2-private
 
 
 TEMPLATE = lib
@@ -19,8 +20,11 @@ LIBS += -L"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Lib\x64" \
     -lgdi32
 
 SOURCES += \
-    $$PWD/qwinwidget.cpp \
+    #$$PWD/qwinwidget.cpp \
+    qwinquickapplicationwindow.cpp
 
 HEADERS += \
-    $$PWD/qwinwidget.h \
-    $$PWD/qwinwidget_p.h \
+    #$$PWD/qwinwidget.h \
+    #$$PWD/qwinwidget_p.h \
+    qwinquickwindow.h \
+    qwinquickapplicationwindow_p.h
